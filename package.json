@@ -1,0 +1,73 @@
+{
+  "name": "react_mongodb_graphql_redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bundlesize": [
+    {
+      "path": "./dest/bundle.js",
+      "maxSize": "300 Kb"
+    }
+  ],
+  "scripts": {
+    "build": "webpack",
+    "preinstall": "npm install pm2 -g",
+    "start": "SET NODE_ENV=production webpack -p && pm2 start index.js -i max --attach",
+    "dev": "webpack && nodemon .",
+    "test": "bundlesize && perfbench && jest",
+    "test:client": "jest"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ]
+  },
+  "engines": {
+    "node": "8.4.0"
+  },
+  "keywords": [
+    "React",
+    "mangodb",
+    "graphql",
+    "redux"
+  ],
+  "dependencies": {
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "express-graphql": "^0.6.7",
+    "express-logging": "^1.1.1",
+    "graphql": "^0.9.6",
+    "graphql-fetch": "^1.0.1",
+    "json-loader": "^0.5.7",
+    "logops": "^2.1.0",
+    "mongoose": "^4.11.9",
+    "path": "^0.12.7",
+    "perfbench": "^1.8.1",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router": "^3.0.5",
+    "redux": "^3.7.2",
+    "webpack": "^2.7.0"
+  },
+  "author": "Arunkumar",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "bundlesize": "^0.13.2",
+    "enzyme": "^2.9.1",
+    "jest": "^20.0.4",
+    "jest-cli": "^20.0.4",
+    "react-test-renderer": "^15.6.1",
+    "regenerator-runtime": "^0.11.0"
+  }
+}
